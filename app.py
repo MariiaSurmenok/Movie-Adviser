@@ -22,7 +22,7 @@ for movie in recent_movies:
     message = message + movie + ", "
 
 # Handle POST request from API.AI.
-@app.route('/movie-adviser/api', methods=['POST'])
+@app.route('/movie-advisor/api', methods=['POST'])
 def get_movies_in_theaters():
     return jsonify({'speech': message, 'displayText': message})
 
