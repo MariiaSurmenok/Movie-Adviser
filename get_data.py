@@ -11,3 +11,17 @@ recent_movies = [
 
 with open(filepath, 'w') as f_obj:
     json.dump(recent_movies, f_obj)
+
+def log_data(filepath, data):
+    """Write requests to file"""
+    with open(filepath, 'a') as f_obj:
+        f_obj.write("\n")
+        json.dump(data, f_obj)
+
+def get_recent_movies(filepath):
+    """Return list of recent movies"""
+    try:
+        with open(filepath) as f_obj:
+            return json.load(f_obj)
+    except FileNotFoundError:
+        print("File not found, check your json path")
